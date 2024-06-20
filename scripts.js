@@ -25,3 +25,16 @@ var job, height;
 // console.log(typeof(isOk))
 // console.log(typeof(job))
 
+job = 'Doctor';
+lastName="Perera"
+
+console.log('I am '+ ' ' + lastName + ' ' +'My occupation is ' + job)
+
+
+// alert('My name is ' + ' ' + firstName + ' '+ 'I am '+ age + ' years old.!!!'
+// );
+
+
+height = prompt('What is your height.? ')
+
+alert("My height is " + height+" feet")
