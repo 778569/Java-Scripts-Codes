@@ -42,44 +42,58 @@
 
 // Arithmetic
 
-var myAge, yourAge,year,result;
+// var myAge, yourAge,year,result;
  
-myAge=26;
-yourAge=20;
-year =2021;
+// myAge=26;
+// yourAge=20;
+// year =2021;
 
-result = year - myAge;
-console.log(`I was born in ${result}`)
+// result = year - myAge;
+// console.log(`I was born in ${result}`)
 
-result = year + 10 ;
-console.log(`After 10 years ${result}`)
+// result = year + 10 ;
+// console.log(`After 10 years ${result}`)
 
 
-console.log(` ${myAge * yourAge}`)
+// console.log(` ${myAge * yourAge}`)
 
-console.log(` ${(myAge / yourAge)}`)
+// console.log(` ${(myAge / yourAge)}`)
 
-console.log(` ${(myAge % yourAge)}`)
+// console.log(` ${(myAge % yourAge)}`)
 
-console.log(` ${(myAge ** 2)}`)
+// console.log(` ${(myAge ** 2)}`)
 
-console.log(` ${(myAge++)}`)
+// console.log(` ${(myAge++)}`)
 
-console.log(` ${(++myAge)}`)
+// console.log(` ${(++myAge)}`)
 
-console.log(` ${(myAge--)}`)
+// console.log(` ${(myAge--)}`)
 
-console.log(` ${(--myAge)}`)
+// console.log(` ${(--myAge)}`)
 
-var age = 50;
-age += 10; 
-console.log(age)
+// var age = 50;
+// age += 10; 
+// console.log(age)
 
-age -= 10;
-console.log(age)
+// age -= 10;
+// console.log(age)
 
-age *= 2;
-console.log(age)
+// age *= 2;
+// console.log(age)
 
-age /= 2;
-console.log(age)
+// age /= 2;
+// console.log(age)
+
+
+var chamal_weight = prompt('Enter chamal weight : ')
+var chamal_hight = prompt('Enter chamal hight : ')
+var kasun_weight = prompt('Enter Kasun weight : ')
+var kasun_hight = prompt('Enter Kasun hight :')
+
+var Chaml_IBM = chamal_weight/(chamal_hight**2);
+
+var kasun_IBM = kasun_weight/(kasun_hight**2);
+
+isKasun = Chaml_IBM > kasun_IBM
+
+console.log(isKasun)
