@@ -34,3 +34,7 @@ console.log(std1)
 
 std1.shift()
 console.log(std1)
+
+var isAgriStudent = std1.indexOf("agri") === -1 ? std1[0] + " is not Agri" : std1[0] + " is Agri ";
+
+console.log(isAgriStudent)
