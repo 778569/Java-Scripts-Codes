@@ -1,173 +1,140 @@
-// Examine the document object
-
-// console.dir(document)
-
-// console.log(document.URL)
-// console.log(document.charset)
-// console.log(document.lastModified)
-// console.log(document.title)
-// console.log(document.doctype)
-
-// console.log(document.head)
-// console.log(document.body)
- console.log(document.all)
-// console.log(document.all[11])
-// console.log(document.forms[0])
-// console.log(document.links)
-// console.log(document.images)
-
-// Value change
-
-
-// console.log(document.title)
-// document.title = 'Document object model'
-// console.log(document.title)
-
-// console.log(document.all[11])
-// document.all[11].textContent ="Shopping Item List"
-// console.log(document.all[11])
-
-
-// console.log(document.getElementById('frmt'))
-
-// var formTitle = document.getElementById('frmt')
-// console.log(formTitle)
-
-// // textContext , innerText, innerHTML
-
-// formTitle.textContent = "Add Shoping Item"  // Not effet style
-// console.log(formTitle.textContent)
-// formTitle.innerText = "Shopping Item" // Effect the style
-// console.log(formTitle.innerText)
-// formTitle.innerHTML='<i>Hello<i> Shopping list'
-// console.log(formTitle.innerHTML)
-
-
-// var navigation = document.getElementById('navbar')
-// console.log(navigation)
-// navigation.style.backgroundColor = 'red'
-
-
-// // Select element using class name
-
-// var items = document.getElementsByClassName('items')
-// console.log(items)
-// console.log(items[0])
-// items[2].textContent = "Hand Bag"
-// console.log(items[2])
-
-// // styling 
-
-// items[2].style.color = 'red'
-
-
-// // chnage all background color
-
-// for (var i of items){
-
-// console.log(i)
-// i.style.backgroundColor= 'green'
-
-// }
-
-// var li = document.getElementsByTagName('li')
-// console.log(li)
-
-// var h3tag = document.getElementsByTagName('h3')
-// console.log(h3tag)
-
-
-// li[0].style.backgroundColor='red'
-
-
-// for (var i of li){
-
-// console.log(i)
-// i.style.backgroundColor= 'green'
-
+// function btnClick(x){
+//     alert(x);
 // }
 
 
-//    using Query selector
+// // Using event listners
 
-// var navb = document.querySelector('#navbar')
-// navb.style.border = 'solid 1px #000'
+// var button1 = document.getElementById('new-id').addEventListener
+// ('click', function(){
 
+//     alert('Clicked button')
+    
+// }
+// )
 
-// var input = document.querySelector('input')
-// input.value="bag" 
+// document.getElementById('new-id').addEventListener
+// ('mouseout', txtChnage)
 
-// var item = document.querySelector('.items');
-// item.style.backgroundColor="red"
-
-// var it = document.querySelector('div .frm #frmt')
-// it.style.color='orange'
-
-
-// document.querySelectorAll('.items')[1].style.color="purple"
-
-// var odd = document.querySelectorAll('li:nth-child(odd)')
-// for(var i of odd){
-//     i.style.backgroundColor='green'
+// function txtChnage(){
+//     alert('Mouse out')
+//     document.getElementById('hdt').textContent = 'Mouse moved.!'
 // }
 
 
 
-// var even = document.querySelectorAll('li:nth-child(even)')
-// for(var i of even){
-//     i.style.backgroundColor='blue'
+// document.getElementById('new1-id').addEventListener('click',
+//     function(){
+//         changeButton('Hello') 
+//     }
+// )
+
+// function changeButton(x){
+
+//     document.getElementById('li-items').style.backgroundColor='red'
+//     document.getElementById('li-items').firstElementChild.textContent= x
 // }
 
-// Traversing the Dom
 
-var itemlist = document.querySelector('#li-items')
-// console.log(itemlist.parentNode)
-// console.log(itemlist.parentNode.parentNode)
+// document.getElementById('check').addEventListener('click',
+// clickButton)
 
-// itemlist.parentNode.style.backgroundColor='red'
-// console.log(itemlist.parentElement)
-
-
-// console.log(itemlist.childNodes)
-// console.log(itemlist.childNodes[1])
-
-
-// console.log(itemlist.children)
-// itemlist.children[0].style.backgroundColor='red'
-// console.log(itemlist.lastElementChild)
-
-// console.log(itemlist.nextElementSibling)
-// itemlist.nextElementSibling.style.color='red'
+// function clickButton(e){
+// console.log(e)
+// console.log(e.target)
+// console.log(e.target.id)
+// console.log(e.target.className)
+// console.log(e.target.classList)
+// console.log(e.target.type)
+// console.log(e.type)
+// document.getElementById('getevent').innerHTML = '<h4>Class name :' + e.target.classList[0] + '</h4>'
 
 
-// console.log(itemlist.previousElementSibling)
-// itemlist.previousElementSibling.style.color='red'
+// //Clicking position
+
+// console.log(e.clientX)
+// console.log(e.clientY)
+
+// console.log(e.altKey)
+// }
+
+
+document.getElementById('myp1').addEventListener('click',
+    function(){
+        alert('You click white bar')
+    }, false
+)
+document.getElementById('mybub').addEventListener('click',
+    function(){
+        alert('You click purple bar')
+    }, false
+)
+
+
+document.getElementById('myp2').addEventListener('click',
+    function(){
+        alert('You click white bar')
+    }, true
+)
+document.getElementById('mycap').addEventListener('click',
+    function(){
+        alert('You click purple bar')
+    }, true
+)
+
+
+document.getElementById('check-my').addEventListener('click',
+    function(){
+        alert('Button Clicked')
+    }
+)
+
+document.getElementById('Uncheck-my').addEventListener('click',
+    function(){
+        document.getElementById('check-my').removeEventListener()
+        console.log("Event removed")
+    }
+)
+
+// Diferant types of events for mouse
+
+var btn = document.getElementById('t-btn');
+var box = document.getElementById('box')
+
+// btn.addEventListener('click',typeofEvent)
+// btn.addEventListener('dblclick',typeofEvent)
+// btn.addEventListener('mousedown',typeofEvent)
+
+box.addEventListener('mouseenter',typeofEvent)
+
+function typeofEvent(e){
+console.log('Event type : '+e.type)
+document.querySelector('#box h2').textContent = 'Mouse X : ' + e.offsetX + ' | Mouse Y' + e.offsetY;
+document.body.style.backgroundColor = 'rgb('+e.offsetX+','+e.offsetY+','+e.offsetX+')'
+}
 
 
 
-// create element 
+// Different types of events for keyboard
 
-// create an Input
-var input = document.createElement('input')
-console.log(input)
-input.className ='test'
-input.id='last'
+// document.querySelector('input').addEventListener('keydown',typeOfevent2)
+// document.querySelector('input').addEventListener('keyup',typeOfevent2)
 
-
-input.setAttribute('type','text')
-// input.setAttribute('type')
+// document.querySelector('input').addEventListener('focus',typeOfevent2)
+// document.querySelector('input').addEventListener('blur',typeOfevent2)
+document.querySelector('input').addEventListener('copy',typeOfevent2)
+document.querySelector('input').addEventListener('input',typeOfevent2)
 
 
-var newDiv = document.createElement('div')
-var newText = document.createTextNode('How to work ?')
+function typeOfevent2(e){
+console.log("Event Type : " + e)
+// console.log("Value : " + e.target.value)
+// document.getElementById('out').textContent= e.target.value
+}
 
-newDiv.appendChild(newText)
-console.log(newDiv)
+document.querySelector('form').addEventListener('submit',submitForm)
 
-// insert created element to the document
-
-var form = document.querySelector('.frm form')
-var button = document.querySelector('.frm form button')
-
-input.style.backgroundColor='yellow'
-form.insertBefore(input,button)
+function submitForm(e){
+e.preventDefault()
+console.log(e.type)
+}
